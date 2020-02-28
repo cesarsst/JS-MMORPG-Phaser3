@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>DEVDATA IA</title>
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+	<!-- CSS
+	================================================== -->
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Template styles-->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Responsive styles-->
+	<link rel="stylesheet" href="css/responsive.css">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Colorbox -->
+	<link rel="stylesheet" href="css/colorbox.css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+	<div class="body-inner">
+
+
+		<!-- Header start -->
+		<header id="header" class="header-one">
+			<div class="container">
+				<div class="row">
+					<div class="logo-area clearfix">
+						<div class="logo col-xs-12 col-md-3">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+						</div><!-- logo end -->
+
+						<div class="col-xs-12 col-md-9 header-right">
+							<ul class="top-info-box">
+								<li>
+									<div class="info-box">
+										<div class="info-box-content">
+											<p class="info-box-title">Fale conosco</p>
+											<p class="info-box-subtitle">(+11) 3438-3856</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="info-box">
+										<div class="info-box-content">
+											<p class="info-box-title">Email </p>
+											<p class="info-box-subtitle">vendas@sdcmedical.com.br</p>
+										</div>
+									</div>
+								</li>
+								<li class="header-get-a-quote">
+									<a class="btn btn-primary " data-toggle="modal" data-target="#loginModal">Minha Conta</a>
+								</li>
+							</ul><!-- Ul end -->
+						</div><!-- header right end -->
+
+						<div class="col-xs-12 col-md-9 header-right">
+							<ul class="top-info-box mt-5">
+								
+									
+							</ul><!-- Ul end -->
+						</div>
+
+					</div><!-- logo area end -->
+
+				</div><!-- Row end -->
+			</div><!-- Container end -->
+
+			<nav class="site-navigation navigation navdown">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="site-nav-inner pull-left">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+
+								<div class="collapse navbar-collapse navbar-responsive-collapse">
+									<ul class="nav navbar-nav">
+										
+										<li><a href="index.html">Home</a></li>
+
+										<li><a href="contact.html">Empresa</a></li>
+
+										<li><a href="contact.html">Produtos</a></li>
+
+										<li><a href="contact.html">Loja Virtual</a></li>
+
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Links Úteis<i
+													class="fa fa-angle-down"></i></a>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="https://www.facebook.com/SDC-Medical-1213553775377818/">Facebook</a></li>
+											</ul>
+										</li>
+
+										<li><a href="contact.html">Novidades</a></li>
+
+										<li><a href="contact.html">Contato</a></li>
+
+									</ul>
+									<!--/ Nav ul end -->
+								</div>
+								<!--/ Collapse end -->
+
+							</div><!-- Site Navbar inner end -->
+
+						</div>
+						<!--/ Col end -->
+					</div>
+					<!--/ Row end -->
+
+					<div class="nav-search">
+						<span id="search"><i class="fa fa-search"></i></span>
+					</div><!-- Search end -->
+
+					<div class="search-block" style="display: none;">
+						<input type="text" class="form-control" placeholder="Type what you want and enter">
+						<span class="search-close">&times;</span>
+					</div><!-- Site search end -->
+				</div>
+				<!--/ Container end -->
+
+			</nav>
+			<!--/ Navigation end -->
+		</header>
+		<!--/ Header end -->
+		<% if(listError.length > 0){ %>
+			
+			<% for(var i = 0; i < listError.length; i++) { %>
+				
+				<div class="alert alert-warning alert-def" role="alert">
+						<strong><%= listError[i][0] %></strong>, <%= listError[i][1] %>
+						<button type="button" class="close close-def" data-dismiss="alert" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+			
+			<% } %>
+		<% } %>
+		<!-- Começo do formulairo de cadastro-->
+		<form class="form-cadastro" action="/register" method="POST">
+			<div class="form-row">
+
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Nome</label>
+					<input name="nome" type="text" class="form-control" id="nome" value="<%= data.nome %>">
+				</div>
+			  <div class="form-group col-md-6">
+				<label for="inputEmail4">Email</label>
+				<input name="email" type="email" class="form-control" id="email" value="<%= data.email %>">
+			  </div>
+			  <div class="form-group col-md-6">
+				<label for="inputPassword4">Password</label>
+				<input name="password" type="password" class="form-control" id="password" value="<%= data.password %>">
+			  </div>
+			  <div class="form-group col-md-6">
+					<label for="inputPassword4">Re-Password</label>
+					<input name="re-password" type="password" class="form-control" id="re-password" placeholder="Re-password">
+				  </div>
+			</div>
+			<div class="form-group col-md">
+			  <label for="inputAddress">Address</label>
+			  <input name="address" type="text" class="form-control" id="address" value="<%= data.address %>">
+			</div>
+			<div class="form-row">
+			  <div class="form-group col-md-6">
+				<label for="inputCity">City</label>
+				<input name="city" type="text" class="form-control" id="inputCity" value="<%= data.city %>">
+			  </div>
+			  <div class="form-group col-md-4">
+				<label for="inputState">State</label>
+				<select name="state" id="inputState" class="form-control">
+					<option value="AC">Acre</option>
+					<option value="AL">Alagoas</option>
+					<option value="AP">Amapá</option>
+					<option value="AM">Amazonas</option>
+					<option value="BA">Bahia</option>
+					<option value="CE">Ceará</option>
+					<option value="DF">Distrito Federal</option>
+					<option value="ES">Espírito Santo</option>
+					<option value="GO">Goiás</option>
+					<option value="MA">Maranhão</option>
+					<option value="MT">Mato Grosso</option>
+					<option value="MS">Mato Grosso do Sul</option>
+					<option value="MG">Minas Gerais</option>
+					<option value="PA">Pará</option>
+					<option value="PB">Paraíba</option>
+					<option value="PR">Paraná</option>
+					<option value="PE">Pernambuco</option>
+					<option value="PI">Piauí</option>
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="RN">Rio Grande do Norte</option>
+					<option value="RS">Rio Grande do Sul</option>
+					<option value="RO">Rondônia</option>
+					<option value="RR">Roraima</option>
+					<option value="SC">Santa Catarina</option>
+					<option value="SP">São Paulo</option>
+					<option value="SE">Sergipe</option>
+					<option value="TO">Tocantins</option>
+				</select>
+			  </div>
+			  <div class="form-group col-md-2 mb-5">
+				<label for="inputZip">Zip</label>
+				<input name="zip" type="text" class="form-control" id="inputZip" value="<%= data.zip %>">
+			  </div>
+			</div>
+			<center><button type="submit" class="btn-form-cadastro btn btn-primary ">Cadastrar</button></center>
+		</form>
+
+
+
+		<footer id="footer" class="footer bg-overlay">
+			<div class="footer-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-12 footer-widget footer-about">
+							<h3 class="widget-title">Central de atendimento</h3>
+							<img class="footer-logo" src="images/footer-logo.png" alt="" />
+							<p>Email: vendas@sdcmedical.com.br</p>
+							<p>Horario: 08:00 - 18:00 horas</p>
+							<p>Fone/Fax : 11 - 3438-3856</p>
+						</div><!-- Col end -->
+
+						<div class="col-md-4 col-sm-12 footer-widget">
+							<h3 class="widget-title">Formas de Pagamentos</h3>
+							<img class="footer-logo" src="images/footer_pgm.png" alt="" />
+						</div><!-- Col end -->
+
+						<div class="col-md-4 col-sm-12 footer-widget">
+							<h3 class="widget-title">Formas de Entregas</h3>
+							<img class="footer-logo" src="images/footer_entr.png" alt="" />
+						</div><!-- Col end -->
+
+
+					</div><!-- Row end -->
+				</div><!-- Container end -->
+			</div><!-- Footer main end -->
+
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6">
+							<div class="copyright-info">
+								<span>Copyright © 2019 desenvolvido por <a href="http://devdataia.com.br/">devdataia.com.br</a></span>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6">
+							<div class="footer-menu">
+								<ul class="nav unstyled">
+									<li><a href="about.html">About</a></li>
+									<li><a href="team.html">Our people</a></li>
+									<li><a href="faq.html">Faq</a></li>
+									<li><a href="news-left-sidebar.html">Blog</a></li>
+									<li><a href="pricing.html">Pricing</a></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- Row end -->
+
+					<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+						<button class="btn btn-primary" title="Back to Top">
+							<i class="fa fa-angle-double-up"></i>
+						</button>
+					</div>
+
+				</div><!-- Container end -->
+			</div><!-- Copyright end -->
+
+		</footer><!-- Footer end -->
+
+		<!-- MODAL LOGIN AREA-->
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Login</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<!-- Formulario de login-->
+						<form action="/login" method="POST">  
+								<div class="form-group">
+								  <label for="exampleInputEmail1">Endereço de email</label>
+								  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+								  <small id="emailHelp" class="form-text text-muted">Nunca compartilhe seu email com outra pessoa</small>
+								</div>
+								<div class="form-group">
+								  <label for="exampleInputPassword1">Senha</label>
+								  <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+								</div>
+								<div class="form-group form-check">
+								  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+								  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+								</div>
+								<button type="submit" class="btn btn-primary">Entrar</button>
+						</form>
+					<!-- End fomrulario login-->
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+				</div>
+			</div>
+			</div>
+	 	</div>
+
+		<!-- Javascript Files
+	================================================== -->
+
+		<!-- initialize jQuery Library -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<!-- Bootstrap jQuery -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!-- Owl Carousel -->
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+		<!-- Color box -->
+		<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+		<!-- Isotope -->
+		<script type="text/javascript" src="js/isotope.js"></script>
+		<script type="text/javascript" src="js/ini.isotope.js"></script>
+
+
+    <!-- Google Map API Key-->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+		<!-- Google Map Plugin-->
+		<script type="text/javascript" src="js/gmap3.js"></script>
+ 
+	 <!-- Template custom -->
+	 <script type="text/javascript" src="js/custom.js"></script>
+
+	</div><!-- Body inner end -->
+</body>
+
+</html>
